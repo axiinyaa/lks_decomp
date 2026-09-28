@@ -14,9 +14,9 @@ decomp.dev progress badges
 See https://decomp.dev/api for an API overview.
 -->
 
-[Code Progress]: https://decomp.dev/zeldaret/tww.svg?mode=shield&measure=code&label=Code
-[Data Progress]: https://decomp.dev/zeldaret/tww.svg?mode=shield&measure=data&label=Data
-[progress]: https://decomp.dev/zeldaret/tww
+[Code Progress]: https://decomp.dev/axiinyaa/lks_decomp.svg?mode=shield&measure=code&label=Code
+[Data Progress]: https://decomp.dev/axiinyaa/lks_decomp.svg?mode=shield&measure=data&label=Data
+[progress]: [https://decomp.dev/zeldaret/tww](https://decomp.dev/axiinyaa/lks_decomp)
 
 <!--
 Replace with your Discord server's ID and invite URL.
