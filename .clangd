@@ -1,0 +1,11 @@
+CompileFlags:
+  Add:
+    - -Iinclude
+    - -Isrc
+    - -DGEKKO
+    - -D__PPC__
+    - -std=c++11
+    - "-m32"
+    - -I/home/axii/Documents/Projects/LKSReverseEngineering/lks_decomp/include
+    - -I/home/axii/Documents/Projects/LKSReverseEngineering/lks_decomp/lib/RVL_SDK/include
+    - -I/home/axii/Documents/Projects/LKSReverseEngineering/lks_decomp/lib/nw4r/include
