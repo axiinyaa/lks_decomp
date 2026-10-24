@@ -1,7 +1,7 @@
 # See config.example.yml for documentation.
 object_base: orig/RO3EXJ
 object: sys/main.dol
-hash: 59ea4417c87c166ec04b9aedf1aedc443ef8076e
+hash: 07ffee3033bb1784c0da378f8034271ef43e7c28
 symbols: config/RO3EXJ/symbols.txt
 splits: config/RO3EXJ/splits.txt
 # map: config/RO3EXJ/RO3EXJ.map
