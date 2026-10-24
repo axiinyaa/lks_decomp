@@ -1871,7 +1871,6 @@ FUN_80099e10 = .text:0x80099e10; // type:function size:0x50
 FUN_80099e60 = .text:0x80099e60; // type:function size:0x1B8
 FUN_8009a018 = .text:0x8009a018; // type:function size:0x14
 FUN_8009a02c = .text:0x8009a02c; // type:function size:0x138
-FUN_8009a164 = .text:0x8009a164; // type:function size:0x5C
 FUN_8009a1c0 = .text:0x8009a1c0; // type:function size:0xB0
 FUN_8009a270 = .text:0x8009a270; // type:function size:0x98
 FUN_8009a308 = .text:0x8009a308; // type:function size:0xD0
