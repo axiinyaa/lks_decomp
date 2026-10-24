@@ -6658,7 +6658,6 @@ FUN_801721a4 = .text:0x801721a4; // type:function size:0xFC
 FUN_801722a4 = .text:0x801722a4; // type:function size:0x48
 FUN_801722ec = .text:0x801722ec; // type:function size:0x54
 CreateEffect = .text:0x80172340; // type:function size:0x80
-FUN_801723dc = .text:0x801723dc; // type:function size:0x18
 FUN_801723f4 = .text:0x801723f4; // type:function size:0x90
 FUN_801724a0 = .text:0x801724a0; // type:function size:0x18
 FUN_801724b8 = .text:0x801724b8; // type:function size:0x58
