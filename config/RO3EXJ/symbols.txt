@@ -10640,7 +10640,6 @@ FUN_802493fc = .text:0x802493fc; // type:function size:0x8
 FUN_80249404 = .text:0x80249404; // type:function size:0x8
 FUN_8024940c = .text:0x8024940c; // type:function size:0x8
 FUN_80249414 = .text:0x80249414; // type:function size:0x8
-FUN_8024941c = .text:0x8024941c; // type:function size:0xC
 FUN_80249428 = .text:0x80249428; // type:function size:0x84
 FUN_802494ac = .text:0x802494ac; // type:function size:0x458
 FUN_80249904 = .text:0x80249904; // type:function size:0x394
