@@ -7079,7 +7079,6 @@ FUN_80180b30 = .text:0x80180b30; // type:function size:0x70
 FUN_80180ba0 = .text:0x80180ba0; // type:function size:0x84
 FUN_80180c24 = .text:0x80180c24; // type:function size:0x58
 AllocateEventMemory? = .text:0x80180c7c; // type:function size:0xA0
-FUN_80180d1c = .text:0x80180d1c; // type:function size:0x30
 FUN_80180d4c = .text:0x80180d4c; // type:function size:0x1B0
 CMessageDataCreateInterfaceForEventFromLZ(?) = .text:0x80180efc; // type:function size:0x138
 CMessageDataCreateInterfaceForEvent::~CMessageDataCreateInterfaceForEvent = .text:0x80181034; // type:function size:0x50
