@@ -32132,7 +32132,6 @@ nw4r::snd::FUN_80289d3c = .text:0x80289d3c; // type:function size:0x3C
 nw4r::snd::FUN_80289d78 = .text:0x80289d78; // type:function size:0x14
 nw4r::snd::FUN_80289d8c = .text:0x80289d8c; // type:function size:0x68
 nw4r::snd::FUN_80289df4 = .text:0x80289df4; // type:function size:0x24
-nw4r::snd::SoundArchive::~SoundArchive = .text:0x80289e18; // type:function size:0x40
 nw4r::snd::FUN_80289e58 = .text:0x80289e58; // type:function size:0x14
 nw4r::snd::SoundArchive::Setup = .text:0x80289e6c; // type:function size:0x58
 nw4r::snd::FUN_80289ec4 = .text:0x80289ec4; // type:function size:0x18
