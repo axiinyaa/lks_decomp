@@ -13,6 +13,17 @@ Sections:
 	.sdata2     type:rodata align:32
 	.sbss2      type:bss align:8
 
+DecoPoco/CPackFile.cpp:
+	extab       start:0x8000A21C end:0x8000A23C
+	extabindex  start:0x8002FB14 end:0x8002FB44
+	.text       start:0x8008F744 end:0x8008F9E4
+
+DecoPoco/Menu/Database/CDPMenuKingdomPlanDataBase.cpp:
+	extab       start:0x800272EC end:0x8002736C
+	extabindex  start:0x800456C0 end:0x80045714
+	.text       start:0x802D0688 end:0x802D0CFC
+	.rodata     start:0x80485858 end:0x80485990
+
 Runtime.PPCEABI.H/__init_cpp_exceptions.cpp:
 	.text       start:0x803C6024 end:0x803C6094
 	.ctors      start:0x8045C0A0 end:0x8045C0A4 rename:.ctors$10
