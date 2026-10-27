@@ -23,10 +23,3 @@ DecoPoco/Menu/Database/CDPMenuKingdomPlanDataBase.cpp:
 	extabindex  start:0x800456C0 end:0x80045714
 	.text       start:0x802D0688 end:0x802D0CFC
 	.rodata     start:0x80485858 end:0x80485990
-
-Runtime.PPCEABI.H/__init_cpp_exceptions.cpp:
-	.text       start:0x803C6024 end:0x803C6094
-	.ctors      start:0x8045C0A0 end:0x8045C0A4 rename:.ctors$10
-	.dtors      start:0x8045C200 end:0x8045C204 rename:.dtors$10
-	.dtors      start:0x8045C204 end:0x8045C208 rename:.dtors$15
-	.sdata      start:0x80557218 end:0x80557220

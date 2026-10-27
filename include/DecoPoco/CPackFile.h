@@ -1,13 +1,13 @@
 namespace CPackFile {
-struct CPackFile
-{
-	int PackageType
-	int Padding1
-	CPackInfo PackInfo
-};
 struct CPackInfo
 {
-	byte* filePointer
+	byte* filePointer;
+};
+struct CPackFile
+{
+	int PackageType;
+	int Padding1;
+	CPackInfo PackInfo;
 };
 struct PACK_INFO_ACCESS
 {
