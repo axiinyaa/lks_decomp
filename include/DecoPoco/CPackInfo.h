@@ -25,16 +25,16 @@ class CPackInfo
 			private:
 			PackFileHeader* Header;
 			public:
-			PackHeaderAccess():Header(0){}
-			PackHeaderAccess(PackFileHeader* HeaderType):Header(HeaderType){}
+			PackHeaderAccess();
+			PackHeaderAccess(PackFileHeader* HeaderType);
 			~PackHeaderAccess();
 			void ShiftHeader();
 			void FUN_8008f8c4();
 			void FUN_8008f8f4();
 			void FUN_8008f90c();
-			char* GetNextFileName();
-			int GetNextFileNameLength();
-			int GetNextFileSize();
+			char* GetFileName();
+			int GetFileNameLength();
+			int GetFileSize();
 		};
 		class PACK_INFO_ACCESS
 		{

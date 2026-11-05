@@ -9,7 +9,7 @@ class CPackFile
 	public:
 		CPackFile():PackageType(0),Padding1(0),PackInfo(){};
 		virtual ~CPackFile(){};
-		CPackFile(const char* filePointer);
+		void CPackFil1e(const char* filePointer);
 		void DeletePackFile(){};
 		void SetPackPadding();
 		int GetPackageType(char* FilePointer);

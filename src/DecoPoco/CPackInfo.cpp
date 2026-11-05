@@ -41,6 +41,15 @@ void CPackInfo::GetPackedFile(char** File, CPackInfo Info)
 	}
 	*File = (char*)Info.filePointer->FilePackHeader;
 }
+
+CPackInfo::PackHeaderAccess::PackHeaderAccess()
+{
+    Header = 0;
+}
+CPackInfo::PackHeaderAccess::PackHeaderAccess(CPackInfo::PackFileHeader* HeaderType)
+{
+    Header = HeaderType;
+}
 void CPackInfo::PackHeaderAccess::ShiftHeader()
 {
 
@@ -57,17 +66,17 @@ void CPackInfo::PackHeaderAccess::FUN_8008f90c()
 {
 
 }
-char* CPackInfo::PackHeaderAccess::GetNextFileName()
+char* CPackInfo::PackHeaderAccess::GetFileName()
 {
 	return Header->Name;
 }
-int CPackInfo::PackHeaderAccess::GetNextFileNameLength()
+int CPackInfo::PackHeaderAccess::GetFileNameLength()
 {
-
+	return (int)Header->Name + (Header->HeaderSize - 12);
 }
-int CPackInfo::PackHeaderAccess::GetNextFileSize()
+int CPackInfo::PackHeaderAccess::GetFileSize()
 {
-
+	return Header->FileSize;
 }
 void CPackInfo::PACK_INFO_ACCESS::GetFileFromName(char* name)
 {
