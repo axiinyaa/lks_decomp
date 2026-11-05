@@ -30,7 +30,7 @@ A work-in-progress decompilation of Little King's Story.
 This repository does **not** contain any game assets or assembly whatsoever. An existing copy of the game is required.
 
 <!-- markdownlint-disable MD033 -->
-[<img src="https://decomp.dev/axiinyaa/lks_decomp.svg?w=512&h=256" width="512" height="256">]
+<img src="https://decomp.dev/axiinyaa/lks_decomp.svg?w=512&h=256" width="512" height="256">
 <!-- markdownlint-enable MD033 -->
 
 Supported versions:
