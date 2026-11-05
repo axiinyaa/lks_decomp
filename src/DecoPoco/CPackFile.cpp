@@ -1,28 +1,10 @@
 #include <DecoPoco/CPackFile.h>
-#include <DecoPoco/CPackInfo.h>
 
-CPackFile::CPackFile()
+void CPackFile::SetPackPadding()
 {
 	Padding1 = 0;
-	PackInfo = new CPackInfo();
 }
-CPackFile::~CPackFile()
+int CPackFile::GetPackageType(char* FilePointer)
 {
-
-}
-CPackFile::GetPackPadding()
-{
-	return Padding1;
-}
-CPackFile::GetPackageType(byte* FilePointer)
-{
-
-}
-CPackInfo::CPackInfo()
-{
-	filePointer = NULL;
-}
-CPackInfo::SetPackFile()
-{
-	filePointer = NULL;
+	return 1;
 }
