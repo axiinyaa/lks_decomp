@@ -72,7 +72,7 @@ char* CPackInfo::PackHeaderAccess::GetFileName()
 }
 int CPackInfo::PackHeaderAccess::GetFileNameLength()
 {
-	return (int)Header->Name + (Header->HeaderSize - 12);
+	return (Header->HeaderSize - 12) + (int)Header->Name;
 }
 int CPackInfo::PackHeaderAccess::GetFileSize()
 {
