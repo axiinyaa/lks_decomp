@@ -16,7 +16,7 @@ See https://decomp.dev/api for an API overview.
 
 [Code Progress]: [https://decomp.dev/axiinyaa/lks_decomp.svg?mode=shield&measure=code&label=Code](https://decomp.dev/axiinyaa/lks_decomp)
 [Data Progress]: [https://decomp.dev/axiinyaa/lks_decomp.svg?mode=shield&measure=data&label=Data](https://decomp.dev/axiinyaa/lks_decomp)
-[progress]: [progress](https://decomp.dev/axiinyaa/lks_decomp)
+[progress]: [https://decomp.dev/axiinyaa/lks_decomp](https://decomp.dev/axiinyaa/lks_decomp)
 
 <!--
 Replace with your Discord server's ID and invite URL.
