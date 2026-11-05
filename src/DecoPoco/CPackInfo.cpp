@@ -50,32 +50,58 @@ CPackInfo::PackHeaderAccess::PackHeaderAccess(CPackInfo::PackFileHeader* HeaderT
 {
     Header = HeaderType;
 }
-void CPackInfo::PackHeaderAccess::ShiftHeader()
+void CPackInfo::PackHeaderAccess::AdvanceHeader()
 {
-
+	if(Header==0)
+	{
+		//There is no next header as the header is null
+		return;
+	}
+	else if(Header->HeaderOffset!=0)
+	{
+		 Header = (PackFileHeader*)((int)Header + Header->HeaderOffset);
+		return;
+	}
+	Header = 0;
+	
 }
-void CPackInfo::PackHeaderAccess::FUN_8008f8c4()
+void CPackInfo::PackHeaderAccess::AdvanceHeaderAlt()
 {
-
+	if(Header==0)
+	{
+		//There is no next header as the header is null
+		return;
+	}
+	else if(Header->HeaderOffset!=0)
+	{
+		 Header = (PackFileHeader*)((int)Header + Header->HeaderOffset);
+		return;
+	}
+	Header = 0;
 }
-void CPackInfo::PackHeaderAccess::FUN_8008f8f4()
+bool CPackInfo::PackHeaderAccess::equals(CPackInfo::PackHeaderAccess otherHeader)
 {
-
+	//Returns true if the passed Access's Header is the same as the current's Header
+	return Header == otherHeader.Header;
 }
-void CPackInfo::PackHeaderAccess::FUN_8008f90c()
+bool CPackInfo::PackHeaderAccess::areUnique(CPackInfo::PackHeaderAccess otherHeader)
 {
-
+	//Returns true if the passed Access's Header is not the same as the current's Header
+	return Header != otherHeader.Header;
 }
 char* CPackInfo::PackHeaderAccess::GetFileName()
 {
+	//Get a pointer to the start of the name in the package header
 	return Header->Name;
 }
 int CPackInfo::PackHeaderAccess::GetFileNameLength()
 {
+	//Get the Size of the Name Buffer in the Pack Header
 	return (Header->HeaderSize - 12) + (int)Header->Name;
 }
 int CPackInfo::PackHeaderAccess::GetFileSize()
 {
+	//Get the Size of the File as defined by the Package Header
 	return Header->FileSize;
 }
 void CPackInfo::PACK_INFO_ACCESS::GetFileFromName(char* name)

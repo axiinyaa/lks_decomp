@@ -28,10 +28,10 @@ class CPackInfo
 			PackHeaderAccess();
 			PackHeaderAccess(PackFileHeader* HeaderType);
 			~PackHeaderAccess();
-			void ShiftHeader();
-			void FUN_8008f8c4();
-			void FUN_8008f8f4();
-			void FUN_8008f90c();
+			void AdvanceHeader();
+			void AdvanceHeaderAlt();
+			bool equals(CPackInfo::PackHeaderAccess otherHeader);
+			bool areUnique(CPackInfo::PackHeaderAccess otherHeader);
 			char* GetFileName();
 			int GetFileNameLength();
 			int GetFileSize();
