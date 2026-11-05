@@ -16,7 +16,7 @@ See https://decomp.dev/api for an API overview.
 
 [Code Progress]: https://decomp.dev/axiinyaa/lks_decomp.svg?mode=shield&measure=code&label=Code
 [Data Progress]: https://decomp.dev/axiinyaa/lks_decomp.svg?mode=shield&measure=data&label=Data
-[progress]: [https://decomp.dev/zeldaret/tww](https://decomp.dev/axiinyaa/lks_decomp)
+[progress]: https://decomp.dev/axiinyaa/lks_decomp
 
 <!--
 Replace with your Discord server's ID and invite URL.
@@ -28,6 +28,10 @@ Replace with your Discord server's ID and invite URL.
 A work-in-progress decompilation of Little King's Story.
 
 This repository does **not** contain any game assets or assembly whatsoever. An existing copy of the game is required.
+
+<!-- markdownlint-disable MD033 -->
+<img src="https://decomp.dev/axiinyaa/lks_decomp.svg?w=512&h=256" width="512" height="256">
+<!-- markdownlint-enable MD033 -->
 
 Supported versions:
 
