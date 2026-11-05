@@ -3,7 +3,7 @@
 bool CPackInfo::SetPackFile(char* FilePointer)
 {
 	filePointer = 0;
-	if(dFilePointer == 0)
+	if(FilePointer == 0)
 	{
 		//If Pointer is Null, Return False
 		return false;
