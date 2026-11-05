@@ -19,7 +19,7 @@ class CPackInfo
 		CPackInfo():filePointer(0){}
 		virtual ~CPackInfo();
 		bool SetPackFile(char* FilePointer);
-		void GetPackedFile(char** File, CPackInfo Info);
+		void GetPackedFile(char** File,CPackInfo Info);
 		class PackHeaderAccess
 		{
 			private:
