@@ -1,4 +1,4 @@
-#include <DecoPoco/CPackInfo.h>
+#include "DecoPoco\CPackInfo.h"
 
 bool CPackInfo::SetPackFile(char* FilePointer)
 {

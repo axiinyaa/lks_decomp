@@ -1,4 +1,7 @@
-#include <CPackInfo.h>
+#ifndef C_PACK_FILE_H
+#define C_PACK_FILE_H
+
+#include "DecoPoco\CPackInfo.h"
 
 class CPackFile
 {
@@ -17,3 +20,5 @@ class CPackFile
 		char* GetFileType();
 		char* GetFileFromPack();
 };
+
+#endif

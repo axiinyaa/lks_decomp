@@ -208,11 +208,12 @@ cflags_base = [
     "-RTTI off",
     "-fp_contract on",
     "-str reuse",
-    "-multibyte",  # For Wii compilers, replace with `-enc SJIS`
+    "-enc SJIS",  # For Wii compilers, replace with `-enc SJIS`
     "-i include",
     f"-i build/{config.version}/include",
     f"-DBUILD_VERSION={version_num}",
     f"-DVERSION_{config.version}",
+    "-DPLATFORM_WII",
 ]
 
 # Debug flags
@@ -247,14 +248,14 @@ cflags_rel = [
     "-sdata2 0",
 ]
 
-config.linker_version = "GC/1.3.2"
+config.linker_version = "Wii/1.5"
 
 
 # Helper function for Dolphin libraries
 def DolphinLib(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
     return {
         "lib": lib_name,
-        "mw_version": "GC/1.2.5n",
+        "mw_version": "Wii/1.5",
         "cflags": cflags_base,
         "progress_category": "sdk",
         "objects": objects,
@@ -265,7 +266,7 @@ def DolphinLib(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
 def Rel(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
     return {
         "lib": lib_name,
-        "mw_version": "GC/1.3.2",
+        "mw_version": "Wii/1.5",
         "cflags": cflags_rel,
         "progress_category": "game",
         "objects": objects,
@@ -295,10 +296,18 @@ config.libs = [
         "objects": [
             Object(NonMatching, "Runtime.PPCEABI.H/global_destructor_chain.c"),
             Object(NonMatching, "Runtime.PPCEABI.H/__init_cpp_exceptions.cpp"),
-            Object(NonMatching, "DecoPoco/CPackFile.cpp"),
-            Object(NonMatching, "DecoPoco/CPackInfo.cpp"),
         ],
     },
+    {
+        "lib": "DecoPoco",
+        "mw_version": config.linker_version,
+        "cflags": cflags_base,
+        "progress_category": "game",
+        "objects": [
+            Object(NonMatching, "DecoPoco/CPackFile.cpp"),
+            Object(NonMatching, "DecoPoco/CPackInfo.cpp"),
+        ]
+    }
 ]
 
 

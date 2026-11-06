@@ -1,3 +1,6 @@
+#ifndef C_PACK_INFO_H
+#define C_PACK_INFO_H
+
 class CPackInfo
 {
 	struct PackFileHeader
@@ -46,3 +49,5 @@ class CPackInfo
 				void GetFileFromName(char* name);
 		};
 };
+
+#endif
