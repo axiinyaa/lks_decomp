@@ -1,9 +1,21 @@
-#include "DecoPoco\CPackInfo.h"
+#include "DecoPoco\CPackInfo.hpp"
+#include <string.h>
+CPackInfo::CPackInfo()
+{
+	//Empty Constructor
+	filePointer = NULL;
+}
+
+CPackInfo::~CPackInfo()
+{
+	//Destructor. Included Here for Parity
+}
 
 bool CPackInfo::SetPackFile(char* FilePointer)
 {
-	filePointer = 0;
-	if(FilePointer == 0)
+	//Sets the Header Pointer (If the Header is Valid)
+	filePointer = NULL;
+	if(FilePointer == NULL)
 	{
 		//If Pointer is Null, Return False
 		return false;
@@ -32,52 +44,64 @@ bool CPackInfo::SetPackFile(char* FilePointer)
 	filePointer = (PackFile*)FilePointer;
 	return true;
 }
-void CPackInfo::GetPackedFile(char** File, CPackInfo Info)
+void CPackInfo::SetPackHeader(PackHeaderAccess* File, CPackInfo* Info)
 {
-	if(Info.filePointer == 0)
+	//Set File Pointer Pointer to this's pointer
+	PackFile* Pack = Info->filePointer;
+	File->Header = NULL;
+	if(Pack != NULL)
 	{
-		*File = 0;
-		return;
+		//Add instead of normal access so it compiles like the game's
+		File->Header = (PackFileHeader*)((char*)Pack + 0x20);
 	}
-	*File = (char*)Info.filePointer->FilePackHeader;
+	
 }
 
 CPackInfo::PackHeaderAccess::PackHeaderAccess()
 {
-    Header = 0;
+	//Empty Constructor
+    Header = NULL;
 }
-CPackInfo::PackHeaderAccess::PackHeaderAccess(CPackInfo::PackFileHeader* HeaderType)
+CPackInfo::PackHeaderAccess::PackHeaderAccess(PackFileHeader** HeaderPointer)
 {
-    Header = HeaderType;
+	//Counstructor with Pointer. Initializes
+    Header = *HeaderPointer;
+}
+CPackInfo::PackHeaderAccess::~PackHeaderAccess()
+{
+    //Destructor. Included Here for Parity
 }
 void CPackInfo::PackHeaderAccess::AdvanceHeader()
 {
-	if(Header==0)
+	//Set the Header to be the next Header in the package, if it exists
+	if(Header==NULL)
 	{
 		//There is no next header as the header is null
 		return;
 	}
-	else if(Header->HeaderOffset!=0)
+	else if(Header->HeaderOffset!=NULL)
 	{
 		 Header = (PackFileHeader*)((int)Header + Header->HeaderOffset);
 		return;
 	}
-	Header = 0;
+	Header = NULL;
 	
 }
 void CPackInfo::PackHeaderAccess::AdvanceHeaderAlt()
 {
-	if(Header==0)
+	//Duplicate of AdvanceHeader
+	//Set the Header to be the next Header in the package, if it exists
+	if(Header==NULL)
 	{
 		//There is no next header as the header is null
 		return;
 	}
-	else if(Header->HeaderOffset!=0)
+	else if(Header->HeaderOffset!=NULL)
 	{
 		 Header = (PackFileHeader*)((int)Header + Header->HeaderOffset);
 		return;
 	}
-	Header = 0;
+	Header = NULL;
 }
 bool CPackInfo::PackHeaderAccess::equals(CPackInfo::PackHeaderAccess otherHeader)
 {
@@ -104,7 +128,22 @@ int CPackInfo::PackHeaderAccess::GetFileSize()
 	//Get the Size of the File as defined by the Package Header
 	return Header->FileSize;
 }
-void CPackInfo::PACK_INFO_ACCESS::GetFileFromName(char* name)
+CPackInfo::PACK_INFO_ACCESS::PACK_INFO_ACCESS(PackFileHeader* FileHeader)
 {
-
+	Header = FileHeader;
+}
+CPackInfo::PACK_INFO_ACCESS::~PACK_INFO_ACCESS()
+{
+	//Destructor. Included Here for Parity
+}
+bool CPackInfo::PACK_INFO_ACCESS::equals(char* name)
+{
+	//Return true if the given name is equal to the Header's Name
+	if(Header == NULL)
+	{
+		//If header is null, there is no name so return they arent equal
+		return false;
+	}
+	//If header name is equal to passed name, return true;
+	return strcmp(Header->Name, name) == 0;
 }

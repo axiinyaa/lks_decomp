@@ -198,18 +198,21 @@ cflags_base = [
     "-align powerpc",
     "-enum int",
     "-fp hardware",
-    "-Cpp_exceptions off",
+    "-Cpp_exceptions on",
     "-O4,p",
     "-inline auto",
     '-pragma "cats off"',
     '-pragma "warn_notinlined off"',
     "-maxerrors 1",
     "-nosyspath",
-    "-RTTI off",
+    "-RTTI on",
     "-fp_contract on",
     "-str reuse",
     "-enc SJIS",  # For Wii compilers, replace with `-enc SJIS`
     "-i include",
+    "-i lib/MSL/include",
+    "-i lib/MSL/src",
+
     f"-i build/{config.version}/include",
     f"-DBUILD_VERSION={version_num}",
     f"-DVERSION_{config.version}",
@@ -279,6 +282,7 @@ Equivalent = (
     config.non_matching
 )  # Object should be linked when configured with --non-matching
 
+ALL = "RO3EXJ"
 
 # Object is only matching for specific versions
 def MatchingFor(*versions):

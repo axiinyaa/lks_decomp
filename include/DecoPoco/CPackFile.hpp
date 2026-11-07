@@ -1,7 +1,7 @@
 #ifndef C_PACK_FILE_H
 #define C_PACK_FILE_H
 
-#include "DecoPoco\CPackInfo.h"
+#include "DecoPoco\CPackInfo.hpp"
 
 class CPackFile
 {

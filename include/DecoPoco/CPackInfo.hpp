@@ -16,20 +16,12 @@ class CPackInfo
 		char Magic[32];
 		PackFileHeader* FilePackHeader;
 	};
-	private:
-		PackFile* filePointer;
-	public:
-		CPackInfo():filePointer(0){}
-		virtual ~CPackInfo();
-		bool SetPackFile(char* FilePointer);
-		void GetPackedFile(char** File,CPackInfo Info);
-		class PackHeaderAccess
+	class PackHeaderAccess
 		{
-			private:
-			PackFileHeader* Header;
 			public:
+			PackFileHeader* Header;
 			PackHeaderAccess();
-			PackHeaderAccess(PackFileHeader* HeaderType);
+			PackHeaderAccess(PackFileHeader** HeaderPointer);
 			~PackHeaderAccess();
 			void AdvanceHeader();
 			void AdvanceHeaderAlt();
@@ -39,15 +31,22 @@ class CPackInfo
 			int GetFileNameLength();
 			int GetFileSize();
 		};
-		class PACK_INFO_ACCESS
+	class PACK_INFO_ACCESS
 		{
-			private:
-			PackFileHeader* Header;
 			public:
-				PACK_INFO_ACCESS():Header(0){};
+				PACK_INFO_ACCESS(PackFileHeader* FileHeader);
 				virtual ~PACK_INFO_ACCESS();
-				void GetFileFromName(char* name);
+				bool equals(char* name);
+				PackFileHeader* Header;
 		};
+	
+	public:
+		CPackInfo();
+		virtual ~CPackInfo();
+		bool SetPackFile(char* FilePointer);
+		static void SetPackHeader(PackHeaderAccess* File, CPackInfo* Info);
+	private:
+		PackFile* filePointer;
 };
 
 #endif
