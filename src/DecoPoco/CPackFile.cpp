@@ -1,4 +1,4 @@
-#include "DecoPoco\CPackFile.h"
+#include "DecoPoco\CPackFile.hpp"
 
 void CPackFile::SetPackPadding()
 {
