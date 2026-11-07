@@ -19,7 +19,7 @@ class CPackInfo
 	private:
 		PackFile* filePointer;
 	public:
-		CPackInfo():filePointer(0){}
+		CPackInfo();
 		virtual ~CPackInfo();
 		bool SetPackFile(char* FilePointer);
 		void GetPackedFile(char** File,CPackInfo Info);
@@ -29,7 +29,7 @@ class CPackInfo
 			PackFileHeader* Header;
 			public:
 			PackHeaderAccess();
-			PackHeaderAccess(PackFileHeader* HeaderType);
+			PackHeaderAccess(char* HeaderType);
 			~PackHeaderAccess();
 			void AdvanceHeader();
 			void AdvanceHeaderAlt();
@@ -44,7 +44,7 @@ class CPackInfo
 			private:
 			PackFileHeader* Header;
 			public:
-				PACK_INFO_ACCESS():Header(0){};
+				PACK_INFO_ACCESS(PackFileHeader* FileHeader);
 				virtual ~PACK_INFO_ACCESS();
 				void GetFileFromName(char* name);
 		};
