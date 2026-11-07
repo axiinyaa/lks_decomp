@@ -210,6 +210,9 @@ cflags_base = [
     "-str reuse",
     "-enc SJIS",  # For Wii compilers, replace with `-enc SJIS`
     "-i include",
+    "-i lib/MSL/include",
+    "-i lib/MSL/src",
+
     f"-i build/{config.version}/include",
     f"-DBUILD_VERSION={version_num}",
     f"-DVERSION_{config.version}",
@@ -306,7 +309,7 @@ config.libs = [
         "progress_category": "game",
         "objects": [
             Object(NonMatching, "DecoPoco/CPackFile.cpp"),
-            Object(MatchingFor(ALL), "DecoPoco/CPackInfo.cpp"),
+            Object(NonMatching, "DecoPoco/CPackInfo.cpp"),
         ]
     }
 ]
