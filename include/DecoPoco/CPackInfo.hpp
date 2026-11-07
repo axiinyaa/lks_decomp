@@ -22,7 +22,7 @@ class CPackInfo
 		CPackInfo();
 		virtual ~CPackInfo();
 		bool SetPackFile(char* FilePointer);
-		void GetPackedFile(char** File,CPackInfo Info);
+		void GetPackedFile(CPackInfo::PACK_INFO_ACCESS File);
 		class PackHeaderAccess
 		{
 			private:
@@ -46,7 +46,7 @@ class CPackInfo
 			public:
 				PACK_INFO_ACCESS(PackFileHeader* FileHeader);
 				virtual ~PACK_INFO_ACCESS();
-				void GetFileFromName(char* name);
+				bool equals(char* name);
 		};
 };
 

@@ -1,5 +1,5 @@
 #include "DecoPoco\CPackInfo.hpp"
-
+#include <string.h>
 CPackInfo::CPackInfo()
 {
 	filePointer = 0;
@@ -43,14 +43,15 @@ bool CPackInfo::SetPackFile(char* FilePointer)
 	filePointer = (PackFile*)FilePointer;
 	return true;
 }
-void CPackInfo::GetPackedFile(char** File, CPackInfo Info)
+void CPackInfo::GetPackedFile(CPackInfo::PACK_INFO_ACCESS File)
 {
-	if(Info.filePointer == 0)
+	//Set File Pointer Pointer to this's pointer
+	File->FilePackHeader = 0;
+	if(filePointer == 0)
 	{
-		*File = 0;
 		return;
 	}
-	*File = (char*)Info.filePointer->FilePackHeader;
+	File->FilePackHeader = (int)filePointer + 0x20;
 }
 
 CPackInfo::PackHeaderAccess::PackHeaderAccess()
@@ -59,6 +60,7 @@ CPackInfo::PackHeaderAccess::PackHeaderAccess()
 }
 CPackInfo::PackHeaderAccess::PackHeaderAccess(char* HeaderType)
 {
+	Header = 0;
 	CPackInfo::PackFileHeader* PackHeader = (CPackInfo::PackFileHeader*)HeaderType;
     Header = PackHeader;
 }
@@ -68,6 +70,7 @@ CPackInfo::PackHeaderAccess::~PackHeaderAccess()
 }
 void CPackInfo::PackHeaderAccess::AdvanceHeader()
 {
+	//Set the Header to be the next Header in the package, if it exists
 	if(Header==0)
 	{
 		//There is no next header as the header is null
@@ -83,6 +86,8 @@ void CPackInfo::PackHeaderAccess::AdvanceHeader()
 }
 void CPackInfo::PackHeaderAccess::AdvanceHeaderAlt()
 {
+	//Duplicate of AdvanceHeader
+	//Set the Header to be the next Header in the package, if it exists
 	if(Header==0)
 	{
 		//There is no next header as the header is null
@@ -128,7 +133,14 @@ CPackInfo::PACK_INFO_ACCESS::~PACK_INFO_ACCESS()
 {
 	//Destructor. Included Here for Parity
 }
-void CPackInfo::PACK_INFO_ACCESS::GetFileFromName(char* name)
+bool CPackInfo::PACK_INFO_ACCESS::equals(char* name)
 {
-	//std::strcmp(name, name);
+	//Return true if the given name is equal to the Header's Name
+	if(Header == 0)
+	{
+		//If header is null, there is no name so return they arent equal
+		return false;
+	}
+	//If header name is equal to passed name, return true;
+	return strcmp(Header->Name, name) == 0;;
 }
