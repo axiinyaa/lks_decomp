@@ -1,7 +1,18 @@
-#include "DecoPoco\CPackInfo.h"
+#include "DecoPoco\CPackInfo.hpp"
+
+CPackInfo::CPackInfo()
+{
+	filePointer = 0;
+}
+
+CPackInfo::~CPackInfo()
+{
+	//Destructor. Included Here for Parity
+}
 
 bool CPackInfo::SetPackFile(char* FilePointer)
 {
+	//Sets the Header Pointer (If the Header is Valid)
 	filePointer = 0;
 	if(FilePointer == 0)
 	{
@@ -46,9 +57,14 @@ CPackInfo::PackHeaderAccess::PackHeaderAccess()
 {
     Header = 0;
 }
-CPackInfo::PackHeaderAccess::PackHeaderAccess(CPackInfo::PackFileHeader* HeaderType)
+CPackInfo::PackHeaderAccess::PackHeaderAccess(char* HeaderType)
 {
-    Header = HeaderType;
+	CPackInfo::PackFileHeader* PackHeader = (CPackInfo::PackFileHeader*)HeaderType;
+    Header = PackHeader;
+}
+CPackInfo::PackHeaderAccess::~PackHeaderAccess()
+{
+    //Destructor. Included Here for Parity
 }
 void CPackInfo::PackHeaderAccess::AdvanceHeader()
 {
@@ -104,7 +120,15 @@ int CPackInfo::PackHeaderAccess::GetFileSize()
 	//Get the Size of the File as defined by the Package Header
 	return Header->FileSize;
 }
+CPackInfo::PACK_INFO_ACCESS::PACK_INFO_ACCESS(PackFileHeader* FileHeader)
+{
+	Header = FileHeader;
+}
+CPackInfo::PACK_INFO_ACCESS::~PACK_INFO_ACCESS()
+{
+	//Destructor. Included Here for Parity
+}
 void CPackInfo::PACK_INFO_ACCESS::GetFileFromName(char* name)
 {
-
+	//std::strcmp(name, name);
 }
