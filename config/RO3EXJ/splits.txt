@@ -23,6 +23,7 @@ DecoPoco/CPackInfo.cpp:
 	extabindex  start:0x8002FB14 end:0x8002FB44
 	.text       start:0x8008F744 end:0x8008F9E4
 	.data       start:0x80498F90 end:0x80498FA8
+	.sdata      start:0x80555248 end:0x80555258
 
 DecoPoco/Menu/Database/CDPMenuKingdomPlanDataBase.cpp:
 	extab       start:0x800272EC end:0x8002736C
